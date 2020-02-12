@@ -11,7 +11,7 @@
 (defrule saludo
 	(declare (salience 10))	
 	=>
-	(printout t "Hola, este es el sistema Depre IA, ahora te daremos algunas recomendacines  basandonos en el nivel de riesgo que obtuviste en el cuestionario." crlf)
+	(printout t "Hola, este es el sistema Depre IA, ahora te daremos 		algunas recomendacines  basandonos en el nivel de riesgo que obtuviste en 		el cuestionario." crlf)
 	(assert (ingresarDatos))
 )
 
@@ -40,30 +40,30 @@
 	=> 
 	(printout t "Recomendaciones: " crlf)
 	
-	if (< ?niv 10) then 
-		(printout t "Obtuviste un nivel de riesgo bajo, eso está bien, si lo sientes necesario consulta a un psicólogo." crlf)
+	(if (< ?niv 10) then 
+		(printout t "Obtuviste un nivel de riesgo bajo, eso está bien, si lo 			sientes necesario consulta a un psicólogo." crlf)
 	else 
-		(if (< ?niv 20) then
-			(printout t "Obtuviste un nivel de riesgo medio, pero no te sientas triste, hay personas dispuestas a ayudarte, deberías consultar con un psicólogo para que te asesore con las dudas que tienes." crlf)
-			(printout t "Puedes hacer varias actividades que te ayuden a sentirte mejor, como salir a caminar, practicar algun deporte, o incluso hacer trabajo comunitario." crlf)
+		(if (< ?niv 20)  then
+			(printout t "Obtuviste un nivel de riesgo medio, pero no te 				sientas triste, hay personas dispuestas a ayudarte, 				deberías consultar con un psicólogo para que te asesore 				con las dudas que tienes." crlf)
+			(printout t "Puedes hacer varias actividades que te ayuden a 				sentirte mejor, como salir a caminar, practicar algun 				deporte, o incluso hacer trabajo comunitario." crlf)
 		else
-			(printout t "Obtuviste un nivel de riesgo alto, ¡No te alarmes! Te recomendamos que solicites una cita con un psicólo en cuanto puedas para que sea él quien te ayude mejor." crlf)
-			(printout t "Puedes hacer varias actividades que te ayuden a sentirte mejor, como salir a caminar, practicar algun deporte, o incluso hacer trabajo comunitario." crlf)
+			(printout t "Obtuviste un nivel de riesgo alto, ¡No te alarmes! 				Te recomendamos que solicites una cita con un psicólo en 				cuanto puedas para que sea él quien te ayude mejor." 				crlf)
+			(printout t "Puedes hacer varias actividades que te ayuden a 				sentirte mejor, como salir a caminar, practicar algun 				deporte, o incluso hacer trabajo comunitario." 	crlf)
 		)
 	)
 
 	(if (< ?sue 4) then
-		(printout t "Al parecer estás durmiendo muy poco. Esto puede tener consecuencias en tu salud, como la  fatiga, cansancio y excesiva somnolencia diurna." crlf)
-		(printout t "Entendemos que no siempre se puede lograr dormir lo suficiente debido al trabajo u otras cosas, pero te recomendamos que intentes dormir un poco más y que consultes a un médico, puede que tengas un trastorno del sueño." crlf)
+		(printout t "Al parecer estás durmiendo muy poco. Esto puede tener 			consecuencias en tu salud, como fatiga, cansancio y excesiva 			somnolencia diurna." crlf)
+		(printout t "Entendemos que no siempre se puede lograr dormir lo 			suficiente debido al trabajo u otras cosas, pero te recomendamos 			que intentes dormir un poco más y que consultes a un médico, 			puede que tengas un trastorno del sueño." crlf)
 	else
 		(if (< ?sue 7) then
-			(printout t "Parece que no estás durmiendo lo suficiente, recuerda que esto puede afectar tu salud y disminuir tu rendimiento en tus actividades diarias." crlf)
-			(printout t "Intenta dormir al menos unas 7h30min para que des lo mejor de ti día a día." crlf)
+			(printout t "Parece que no estás durmiendo lo suficiente, 				recuerda que esto puede afectar tu salud y disminuir tu 				rendimiento en tus actividades diarias." crlf)
+			(printout t "Intenta dormir al menos unas 7h30min para que des lo 				mejor de ti día a día." crlf)
 		else
 			(if (< ?sue 9) then
-				(printout t "Tu tiempo de sueño es el adecuado, ¡Qué bien!." crlf)
+				(printout t "Tu tiempo de sueño es el adecuado, ¡Qué 							bien!." crlf)
 			else 
-				(printout t "Parece que estás durmiendo más de lo recomendado. Te recomendamos que consultes a un médico." crlf)
+				(printout t "Parece que estás durmiendo más de lo 					recomendado. Te recomendamos que consultes a un 					médico." crlf)
 			)
 		)
 	)
